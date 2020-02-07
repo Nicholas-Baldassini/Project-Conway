@@ -8,6 +8,8 @@ public class EOU {
         System.out.println(print);
     }public static void println(float print){
         System.out.println(print);
+    }public static void println(double print){
+        System.out.println(print);
     }
     
     public static void print(String print){
@@ -15,6 +17,8 @@ public class EOU {
     }public static void print(int print){
         System.out.print(print);
     }public static void print(float print){
+        System.out.print(print);
+    }public static void print(double print){
         System.out.print(print);
     }
 }
