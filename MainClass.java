@@ -2,6 +2,8 @@ package ProjectConway;
 
 public class MainClass{
     public static void main(String[] args){
-        //Begin coding here
+        for(int i =0; i<100; i++){
+            System.out.println("Hello World");
+        }
     }
 }
