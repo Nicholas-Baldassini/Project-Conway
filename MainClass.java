@@ -1,4 +1,4 @@
-
+//this is a comment. i wrote it
 package ProjectConway;
 
 public class MainClass{
