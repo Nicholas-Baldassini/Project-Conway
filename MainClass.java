@@ -6,7 +6,7 @@ public class MainClass{
         for(int i =0; i<100; i++){
             EOU.println(i);
         }
-        boolean githubworks = true;
+        boolean githubworks = false;
         while (githubworks) {
             EOU.print("oeuf ");
         }
