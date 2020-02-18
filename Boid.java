@@ -31,4 +31,7 @@ public class Boid {
         int[] data = {this.x, this.y, this.state, this.territory};
         return data;   
     }
+
+    void update() {
+    }
 }
