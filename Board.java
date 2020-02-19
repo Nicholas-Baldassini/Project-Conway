@@ -2,15 +2,14 @@
 package ProjectConway;
 
 public class Board {
-    int[][] stuff;
+    Boid[] stuff;
     
-    public Board(int[][] data){
+    public Board(Boid[] data){
         this.stuff = data;
     }
     
     public void massUpdate(){
-        for(int[] data:this.stuff){
-            Boid boid = new Boid(data);
+        for(Boid boid:this.stuff){
             boid.update();
         }
     }
