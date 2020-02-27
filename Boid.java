@@ -3,8 +3,7 @@ package ProjectConway;
 
 public class Boid {
     
-    int x;
-    int y;
+    int[] pos;
     int state;
     int territory;
     
@@ -14,11 +13,10 @@ public class Boid {
     Post: New boids data is saved
     Save the instance variables of a new boid
     */
-    public Boid Boid(int[] data){
-        this.x = data[0];
-        this.y = data[1];
-        this.state = data[2];
-        this.territory = data[3];
+    public Boid Boid(int[] pos){
+        this.pos = pos;
+        this.state = 0;
+        this.territory = 0;
         return this;
     }
 
