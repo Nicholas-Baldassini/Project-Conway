@@ -5,6 +5,7 @@ public class Boid {
     
     int[] pos;
     int state;
+    int newstate;
     int territory;
     
     /*
@@ -16,6 +17,7 @@ public class Boid {
     public Boid Boid(int[] pos){
         this.pos = pos;
         this.state = 0;
+        this.newstate = 0;
         this.territory = 0;
         return this;
     }
