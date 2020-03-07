@@ -8,9 +8,12 @@ public class Board {
         this.stuff = data;
     }
     
-    public void massUpdate(){
+    public void massUpdate(Rule[] rules){
         for(Boid boid:this.stuff){
-            boid.update();
+            boid.update(this.stuff, rules);
+        }
+        for(Boid boid:this.stuff){
+            boid.fix();
         }
     }
 }
