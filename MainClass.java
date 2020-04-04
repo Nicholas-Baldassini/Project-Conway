@@ -7,8 +7,8 @@ public class MainClass{
             EOU.println(i);
         }
         
-        boolean githubworks = false;
-        while (githubworks) {
+        boolean swingworks = false;
+        while (swingworks) {
             EOU.print("oeuf ");
         }
     }
