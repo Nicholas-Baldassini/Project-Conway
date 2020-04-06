@@ -3,6 +3,8 @@ package ProjectConway;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainClass extends JFrame{
     public static void main(String[] args){
@@ -17,6 +19,18 @@ public class MainClass extends JFrame{
         screen.getContentPane().setBackground(Color.GRAY);
         
         //play button
+        JButton playButton = new JButton("Play"); //create button
+        playButton.setBounds(100, 50, 200, 30); //button size
+        screen.add(playButton); //put button on screen
+        playButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) { 
+                //action of button
+                screen.getContentPane().setBackground(Color.RED);
+            }
+        }
+        
+        );
         
         
         /*
