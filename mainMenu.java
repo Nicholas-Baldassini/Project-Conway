@@ -85,6 +85,8 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void creditsbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creditsbuttonActionPerformed
         // TODO add your handling code here:
+        creditsMenu crdMnu = new creditsMenu();
+        crdMnu.setVisible(true);
     }//GEN-LAST:event_creditsbuttonActionPerformed
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
