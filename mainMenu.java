@@ -87,17 +87,19 @@ public class mainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         creditsMenu crdMnu = new creditsMenu();
         crdMnu.setVisible(true);
+        dispose(); // closes current frame
     }//GEN-LAST:event_creditsbuttonActionPerformed
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
         // TODO add your handling code here:
         levelSelect lvlSel = new levelSelect();
         lvlSel.setVisible(true);
+        dispose(); // closes current frame
     }//GEN-LAST:event_playbuttonActionPerformed
 
     private void quitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbuttonActionPerformed
         // TODO add your handling code here:
-        //make it stop
+        dispose(); // closes current frame
     }//GEN-LAST:event_quitbuttonActionPerformed
 
     private void playbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playbuttonMouseClicked

@@ -95,6 +95,7 @@ public class creditsMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         mainMenu mnMnu = new mainMenu();
         mnMnu.setVisible(true);
+        dispose(); // closes current frame
     }//GEN-LAST:event_backbuttonActionPerformed
 
     /**

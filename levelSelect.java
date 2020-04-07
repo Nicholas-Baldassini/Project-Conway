@@ -184,6 +184,7 @@ public class levelSelect extends javax.swing.JFrame {
         // TODO add your handling code here:
         mainMenu mnMnu = new mainMenu();
         mnMnu.setVisible(true);
+        dispose(); // closes current frame
     }//GEN-LAST:event_backbuttonActionPerformed
 
     private void level1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level1ActionPerformed
