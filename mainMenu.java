@@ -89,8 +89,8 @@ public class mainMenu extends javax.swing.JFrame {
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
         // TODO add your handling code here:
-        levelSelect obj = new levelSelect();
-        obj.setVisible(true);
+        levelSelect lvlSel = new levelSelect();
+        lvlSel.setVisible(true);
     }//GEN-LAST:event_playbuttonActionPerformed
 
     private void quitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbuttonActionPerformed
