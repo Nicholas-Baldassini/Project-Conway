@@ -41,6 +41,13 @@ public class MainClass extends JFrame{
             }
         }
         ); //end button function
+        
+        //blank (java tends to mess up the last line of code so add this to the end of every screen)
+        JLabel blank = new JLabel("");
+        blank.setBounds(170, 30, 90, 30);
+        blank.setBackground(Color.BLACK);
+        blank.setForeground(Color.BLACK);
+        screen.add(blank);
     }
     
     public static void playScreen(){
@@ -70,6 +77,13 @@ public class MainClass extends JFrame{
             }
         }
         ); //end button function
+        
+        //blank (java tends to mess up the last line of code so add this to the end of every screen)
+        JLabel blank = new JLabel("");
+        blank.setBounds(170, 30, 90, 30);
+        blank.setBackground(Color.BLACK);
+        blank.setForeground(Color.BLACK);
+        screen.add(blank);
     }
     
 }
