@@ -13,7 +13,7 @@ public class Boid {
     
     /*
     Constructor method
-    Pre: Previous boid has been updataed
+    Pre: N/A
     Post: New boids data is saved
     Save the instance variables of a new boid
     */
@@ -25,7 +25,13 @@ public class Boid {
         this.territory = 0;
         return this;
     }
-
+    
+    /*
+    Update method
+    Pre: Boid has been asked to update
+    Post: Boid knows what it will do next
+    Check the surrounding of a boid
+    */
     void update(Boid[] check, Rule[] rules) {
         int[] count = new int[rules.length];
         for (Boid b : check) {
@@ -49,6 +55,12 @@ public class Boid {
         }
     }
     
+    /*
+    Fix method
+    Pre: Boid knows what it will do next
+    Post: Boid has done the next thing
+    Update the status of a boid
+    */
     void fix(){
         this.state = this.newstate;
     }
