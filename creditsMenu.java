@@ -93,7 +93,9 @@ public class creditsMenu extends javax.swing.JFrame {
 
     private void backbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbuttonActionPerformed
         // TODO add your handling code here:
-        //make it stop
+        mainMenu mnMnu = new mainMenu();
+        mnMnu.setVisible(true);
+        dispose(); // closes current frame
     }//GEN-LAST:event_backbuttonActionPerformed
 
     /**
@@ -130,8 +132,10 @@ public class creditsMenu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new creditsMenu().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new creditsMenu().setVisible(true);
+            }
         });
     }
 
