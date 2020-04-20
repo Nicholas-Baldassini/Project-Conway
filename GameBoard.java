@@ -1,5 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * this is the gameboard
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -209,7 +209,7 @@ public class GameBoard extends javax.swing.JFrame {
         int i = height * evt.getY()/jPanel1.getHeight();
         if (SwingUtilities.isLeftMouseButton(evt)){
             currentMove[i][j] = true;
-        } else currentMove[i][j] = false;
+        } else currentMove[i][j] = true;
         repain();
     }//GEN-LAST:event_jPanel1MouseDragged
 
