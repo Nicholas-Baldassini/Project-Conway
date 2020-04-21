@@ -15,8 +15,9 @@ import javax.swing.SwingUtilities;
 public class GameBoard extends javax.swing.JFrame {
     
     final int width = 200, height = 100;
-    Boid[] stuff = new Boid[0];
-    Rule[] rules;
+    Boid[] stuff = {};
+    Rule[] rules = {};
+    
     boolean play;
     Image offScrImg;
     Graphics offScrGraph;
@@ -27,6 +28,10 @@ public class GameBoard extends javax.swing.JFrame {
                 stuff = EOU.add(stuff, new Boid(j, i));
             }
         }
+        //To add a new type of boid just copy pasta and change the needed fields
+        int[] p = {2, 3};
+        int[] q = {3};
+        rules = EOU.add(rules, new Rule(1, p, q));
     }
     
     public GameBoard() {
@@ -174,11 +179,10 @@ public class GameBoard extends javax.swing.JFrame {
         //for individual clicks
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
-        EOU.println(j); EOU.println(i);
-        EOU.println(stuff.length);
+
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
-                boid.state = (boid.state + 1) % rules.length;
+                boid.state = (boid.state + 1) % (rules.length + 1);
             }
         }
         repain();

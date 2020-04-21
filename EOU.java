@@ -48,4 +48,14 @@ public class EOU {
         newlist[l] = n;
         return newlist;
     }
+
+    public static Rule[] add(Rule[] old, Rule n){
+        int l = old.length;
+        
+        Rule[] newlist = new Rule[l+1];
+        
+        System.arraycopy(old, 0, newlist, 0, l);
+        newlist[l] = n;
+        return newlist;
+    }
 }

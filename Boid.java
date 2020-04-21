@@ -32,7 +32,7 @@ public class Boid {
     Check the surrounding of a boid
     */
     void update(Boid[] check, Rule[] rules) {
-        int[] count = new int[rules.length];
+        int[] count = new int[rules.length + 1];
         for (Boid b : check) {
             if (b.state != 0 && b.x-1 <= this.x && this.x <= b.x+1 && b.y-1 <= this.y && this.y <= b.y+1) {
                 if (b.x != this.x || b.y != this.y){
@@ -41,8 +41,10 @@ public class Boid {
                 }
             }
         }
-        if (Arrays.binarySearch(rules[this.state].keep, count[0]) == -1){
-            this.newstate = 0;
+        if (this.state != 0){
+            if (Arrays.binarySearch(rules[this.state-1].keep, count[0]) == -1){
+                this.newstate = 0;
+            }
         }
         if (this.state == 0 && count[0] > 0){
             for (int q = 0; q<rules.length; q++){
