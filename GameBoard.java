@@ -14,7 +14,6 @@ import javax.swing.SwingUtilities;
 
 public class GameBoard extends javax.swing.JFrame {
     
-    boolean reset = true;
     final int width = 200, height = 100;
     Boid[] stuff = new Boid[0];
     Rule[] rules;
@@ -24,21 +23,14 @@ public class GameBoard extends javax.swing.JFrame {
     
     private void setup(){
         for (int i = 0; i < height; i++){
-            EOU.print("i");
-            EOU.println(i);
             for (int j = 0; j < width; j++){
-                EOU.print("j");
-                EOU.println(j);
-                EOU.add(stuff, new Boid(j, i));
+                stuff = EOU.add(stuff, new Boid(j, i));
             }
         }
     }
     
     public GameBoard() {
-        if (reset){
-            setup();
-            reset = false;
-        }
+        setup();
         
         initComponents();
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
@@ -175,27 +167,34 @@ public class GameBoard extends javax.swing.JFrame {
         play = !play;
         if (play) jButton1.setText("Pause");
         else jButton1.setText("Play");
-        //repain();
+        repain();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         //for individual clicks
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
-        //repain();
+        EOU.println(j); EOU.println(i);
+        EOU.println(stuff.length);
+        for (Boid boid: stuff){
+            if (boid.x == j && boid.y == i){
+                boid.state = (boid.state + 1) % rules.length;
+            }
+        }
+        repain();
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jPanel1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentResized
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
-        //repain();
+        repain();
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         for (Boid boid:stuff){
             boid.state = 0;
         }
-        //repain();
+        repain();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
