@@ -13,24 +13,32 @@ import java.awt.Graphics;
 import javax.swing.SwingUtilities;
 
 public class GameBoard extends javax.swing.JFrame {
-
+    
+    boolean reset = true;
     final int width = 200, height = 100;
-    Boid[] stuff;
+    Boid[] stuff = new Boid[0];
     Rule[] rules;
     boolean play;
     Image offScrImg;
     Graphics offScrGraph;
     
     private void setup(){
-        /*for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; i++){
+        for (int i = 0; i < height; i++){
+            EOU.print("i");
+            EOU.println(i);
+            for (int j = 0; j < width; j++){
+                EOU.print("j");
+                EOU.println(j);
                 EOU.add(stuff, new Boid(j, i));
             }
-        }*/
+        }
     }
     
     public GameBoard() {
-        setup();
+        if (reset){
+            setup();
+            reset = false;
+        }
         
         initComponents();
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());

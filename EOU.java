@@ -45,7 +45,7 @@ public class EOU {
         Boid[] newlist = new Boid[l+1];
         
         System.arraycopy(old, 0, newlist, 0, l);
-        newlist[l+1] = n;
+        newlist[l] = n;
         return newlist;
     }
 }
