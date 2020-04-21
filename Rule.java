@@ -11,10 +11,9 @@ public class Rule {
     Post: New Boid type has been created
     Save the conditions of a new boid type
     */
-    public Rule Rule(int team, int[] keep, int[] spawn){
+    Rule(int team, int[] keep, int[] spawn){
         this.team = team;
         this.keep = keep;
         this.spawn = spawn;
-        return this;
     }    
 }

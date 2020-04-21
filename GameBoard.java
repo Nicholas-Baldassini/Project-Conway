@@ -15,12 +15,23 @@ import javax.swing.SwingUtilities;
 public class GameBoard extends javax.swing.JFrame {
 
     final int width = 200, height = 100;
-    boolean[][] currentMove = new boolean[height][width], nextMove = new boolean[height][width];
+    Boid[] stuff;
+    Rule[] rules;
     boolean play;
     Image offScrImg;
     Graphics offScrGraph;
     
+    private void setup(){
+        /*for (int i = 0; i < height; i++){
+            for (int j = 0; j < width; i++){
+                EOU.add(stuff, new Boid(j, i));
+            }
+        }*/
+    }
+    
     public GameBoard() {
+        setup();
+        
         initComponents();
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
@@ -28,15 +39,11 @@ public class GameBoard extends javax.swing.JFrame {
         TimerTask task = new TimerTask(){
             public void run(){
                 if (play){
-                    for (int i = 0; i < height; i++){
-                        for (int j = 0; j < width; j++){
-                            nextMove[i][j] = decide(i,j);
-                        }
+                    for(Boid boid:stuff){
+                        boid.update(stuff, rules);
                     }
-                    for (int i = 0; i < height; i++){
-                        for (int j = 0; j < width; j++){
-                            currentMove[i][j] = nextMove[i][j];
-                        }
+                    for(Boid boid:stuff){
+                        boid.fix();
                     }
                     repain();
                 }
@@ -46,37 +53,15 @@ public class GameBoard extends javax.swing.JFrame {
         repain();
     }
     
-    private boolean decide(int i, int j){
-        int neighbors = 0;
-        if (j>0) {
-            if (currentMove[i][j-1]) neighbors++;
-            if (i>0) if (currentMove[i-1][j-1]) neighbors++;
-            if (i<height-1) if (currentMove[i+1][j-1]) neighbors++;
-        }
-        if (j<width-1) {
-            if (currentMove[i][j+1]) neighbors++;
-            if (i>0) if (currentMove[i-1][j+1]) neighbors++;
-            if (i<height-1) if (currentMove[i+1][j+1]) neighbors++;
-        }
-        if (i>0) if (currentMove[i-1][j]) neighbors++;
-        if (i<height-1) if (currentMove[i+1][j]) neighbors++;
-        
-        if (neighbors == 3) return true;
-        if (currentMove[i][j] && neighbors == 2) return true;
-        return false;
-    }
-    
     private void repain(){
         offScrGraph.setColor(jPanel1.getBackground());
         offScrGraph.fillRect(0, 0, jPanel1.getWidth(), jPanel1.getHeight());
-        for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; j++){
-                if (currentMove[i][j]){
-                    offScrGraph.setColor(Color.YELLOW);
-                    int y = i*jPanel1.getHeight()/height;
-                    int x = j*jPanel1.getWidth()/width;
-                    offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
-                }
+        for (Boid thing : stuff) {
+            if (thing.state == 1) {
+                offScrGraph.setColor(Color.YELLOW);
+                int y = thing.y * jPanel1.getHeight() / height;
+                int x = thing.x * jPanel1.getWidth() / width;
+                offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }
         }
         offScrGraph.setColor(Color.BLACK);
@@ -182,35 +167,38 @@ public class GameBoard extends javax.swing.JFrame {
         play = !play;
         if (play) jButton1.setText("Pause");
         else jButton1.setText("Play");
-        repain();
+        //repain();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         //for individual clicks
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
-        currentMove[i][j] = !currentMove[i][j];
-        repain();
+        //repain();
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jPanel1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentResized
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
-        repain();
+        //repain();
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        currentMove = new boolean[height][width];
-        repain();
+        for (Boid boid:stuff){
+            boid.state = 0;
+        }
+        //repain();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
+        /*
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
         if (SwingUtilities.isLeftMouseButton(evt)){
             currentMove[i][j] = true;
         } else currentMove[i][j] = true;
         repain();
+        */
     }//GEN-LAST:event_jPanel1MouseDragged
 
     /**

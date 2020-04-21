@@ -17,13 +17,12 @@ public class Boid {
     Post: New boids data is saved
     Save the instance variables of a new boid
     */
-    public Boid Boid(int x, int y){
+    Boid(int x, int y){
         this.x = x;
         this.y = y;
         this.state = 0;
         this.newstate = 0;
         this.territory = 0;
-        return this;
     }
     
     /*
