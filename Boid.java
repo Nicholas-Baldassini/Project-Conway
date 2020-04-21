@@ -42,14 +42,15 @@ public class Boid {
             }
         }
         if (this.state != 0){
-            if (Arrays.binarySearch(rules[this.state-1].keep, count[0]) == -1){
+            if (Arrays.binarySearch(rules[this.state-1].keep, count[0]) < 0){
                 this.newstate = 0;
             }
         }
         if (this.state == 0 && count[0] > 0){
             for (int q = 0; q<rules.length; q++){
-                if (Arrays.binarySearch(rules[q].spawn, count[0]) != -1 && count[q] >= count[0]/2){
-                    this.newstate = q;
+                EOU.print(Arrays.binarySearch(rules[q].spawn, count[0]));
+                if (Arrays.binarySearch(rules[q].spawn, count[0]) > -1 && count[q] >= count[0]/2){
+                    this.newstate = q+1;
                     break;
                 }
             }
