@@ -182,8 +182,13 @@ public class GameBoard extends javax.swing.JFrame {
 
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
-                boid.newstate = (boid.state + 1) % (rules.length + 1);
-                boid.state = (boid.state + 1) % (rules.length + 1);
+                if (boid.state == 0){
+                    boid.newstate = boid.territory;
+                    boid.state = boid.territory;
+                }else{
+                    boid.newstate = 0;
+                    boid.state = 0;
+                }
             }
         }
         repain();

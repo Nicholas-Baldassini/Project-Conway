@@ -64,5 +64,8 @@ public class Boid {
     */
     void fix(){
         this.state = this.newstate;
+        if (this.newstate != 0) {
+            this.territory = this.newstate;
+        }
     }
 }
