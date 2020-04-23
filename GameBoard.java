@@ -203,6 +203,7 @@ public class GameBoard extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         for (Boid boid:stuff){
             boid.state = 0;
+            boid.territory = 0;
         }
         repain();
     }//GEN-LAST:event_jButton2ActionPerformed
