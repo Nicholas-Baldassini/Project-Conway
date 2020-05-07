@@ -27,6 +27,9 @@ public class GameBoard extends javax.swing.JFrame {
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
+                if (x > width/2){
+                    stuff[stuff.length - 1].territory = 2;
+                }
             }
         }
         //To add a new type of boid just copy pasta and change the needed fields
@@ -73,7 +76,12 @@ public class GameBoard extends javax.swing.JFrame {
         //set the color of a selected square to 1
         for (Boid thing : stuff) {
             if (thing.state == 1) {
-                offScrGraph.setColor(Color.YELLOW);
+                offScrGraph.setColor(Color.BLUE);
+                int y = thing.y * jPanel1.getHeight() / height;
+                int x = thing.x * jPanel1.getWidth() / width;
+                offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
+            }else if (thing.state == 2) {
+                offScrGraph.setColor(Color.RED);
                 int y = thing.y * jPanel1.getHeight() / height;
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);

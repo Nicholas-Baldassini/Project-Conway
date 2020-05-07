@@ -22,7 +22,7 @@ public class Boid {
         this.y = y;
         this.state = 0;
         this.newstate = 0;
-        this.territory = 2;
+        this.territory = 1;
     }
     
     /*
@@ -33,6 +33,11 @@ public class Boid {
     */
     void update(Boid[] check, Rule[] rules) {
         int[] count = new int[rules.length + 1];
+        
+        for (int c = 0; c < count.length; c++) {
+            count[c] = 0;
+        }
+        
         for (Boid b : check) {
             if (b.state != 0 && b.x-1 <= this.x && this.x <= b.x+1 && b.y-1 <= this.y && this.y <= b.y+1) {
                 if (b.x != this.x || b.y != this.y){
@@ -48,8 +53,12 @@ public class Boid {
         }
         if (this.state == 0 && count[0] > 0){
             for (int q = 0; q<rules.length; q++){
-                if (Arrays.binarySearch(rules[q].spawn, count[0]) > -1 && count[q] >= count[0]/2){
-                    this.newstate = q+1;
+                if (Arrays.binarySearch(rules[q].spawn, count[0]) > -1 && count[q + 1] > count[0]/2){
+                    for (int c: count) {
+                        EOU.print(c);
+                        
+                    }EOU.println("");
+                    this.newstate = rules[q].team;
                     break;
                 }
             }
