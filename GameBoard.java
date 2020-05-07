@@ -30,10 +30,14 @@ public class GameBoard extends javax.swing.JFrame {
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
-                if ((x > (width*0.75)) && ((level == 6) || ((level >= 8) && (level <= 12)))){
-                    stuff[stuff.length - 1].territory = 2;
-                } else if (x < (width*0.25)){
+                if (level == 1) {
                     stuff[stuff.length - 1].territory = 1;
+                } else {
+                    if ((x > (width*0.75)) && ((level == 6) || ((level >= 8) && (level <= 12)))){
+                        stuff[stuff.length - 1].territory = 2;
+                    } else if (x < (width*0.25)){
+                        stuff[stuff.length - 1].territory = 1;
+                    }
                 }
             }
         }
