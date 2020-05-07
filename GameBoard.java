@@ -75,7 +75,19 @@ public class GameBoard extends javax.swing.JFrame {
         
         //set the color of a selected square to 1
         for (Boid thing : stuff) {
-            if (thing.state == 1) {
+            if (thing.state == 0){
+                if (thing.territory == 1){
+                    offScrGraph.setColor(Color.CYAN);
+                    int y = thing.y * jPanel1.getHeight() / height;
+                    int x = thing.x * jPanel1.getWidth() / width;
+                    offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
+                }else if (thing.territory == 2){
+                    offScrGraph.setColor(Color.PINK);
+                    int y = thing.y * jPanel1.getHeight() / height;
+                    int x = thing.x * jPanel1.getWidth() / width;
+                    offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
+                }
+            }else if (thing.state == 1) {
                 offScrGraph.setColor(Color.BLUE);
                 int y = thing.y * jPanel1.getHeight() / height;
                 int x = thing.x * jPanel1.getWidth() / width;
