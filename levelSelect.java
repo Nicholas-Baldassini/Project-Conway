@@ -67,7 +67,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(backbutton);
-        backbutton.setBounds(140, 410, 200, 40);
+        backbutton.setBounds(160, 410, 200, 40);
 
         level1.setLabel("1");
         level1.addActionListener(new java.awt.event.ActionListener() {
@@ -76,7 +76,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level1);
-        level1.setBounds(130, 170, 40, 40);
+        level1.setBounds(140, 170, 50, 50);
 
         level2.setLabel("2");
         level2.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level2);
-        level2.setBounds(190, 170, 40, 40);
+        level2.setBounds(200, 170, 50, 50);
 
         level3.setLabel("3");
         level3.addActionListener(new java.awt.event.ActionListener() {
@@ -94,7 +94,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level3);
-        level3.setBounds(250, 170, 40, 40);
+        level3.setBounds(260, 170, 50, 50);
 
         level4.setLabel("4");
         level4.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +103,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level4);
-        level4.setBounds(310, 170, 40, 40);
+        level4.setBounds(320, 170, 50, 50);
 
         level5.setLabel("5");
         level5.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level5);
-        level5.setBounds(130, 240, 40, 40);
+        level5.setBounds(140, 240, 50, 50);
 
         level6.setLabel("6");
         level6.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +121,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level6);
-        level6.setBounds(190, 240, 40, 40);
+        level6.setBounds(200, 240, 50, 50);
 
         level7.setLabel("7");
         level7.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +130,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level7);
-        level7.setBounds(250, 240, 40, 40);
+        level7.setBounds(260, 240, 50, 50);
 
         level8.setLabel("8");
         level8.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +139,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level8);
-        level8.setBounds(310, 240, 40, 40);
+        level8.setBounds(320, 240, 50, 50);
 
         level9.setLabel("9");
         level9.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +148,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level9);
-        level9.setBounds(130, 310, 40, 40);
+        level9.setBounds(140, 310, 50, 50);
 
         level10.setLabel("10");
         level10.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +157,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level10);
-        level10.setBounds(190, 310, 40, 40);
+        level10.setBounds(200, 310, 50, 50);
 
         level11.setLabel("11");
         level11.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +166,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level11);
-        level11.setBounds(250, 310, 40, 40);
+        level11.setBounds(260, 310, 50, 50);
 
         level12.setLabel("12");
         level12.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +175,7 @@ public class levelSelect extends javax.swing.JFrame {
             }
         });
         getContentPane().add(level12);
-        level12.setBounds(310, 310, 40, 40);
+        level12.setBounds(320, 310, 50, 50);
 
         pack();
         setLocationRelativeTo(null);
