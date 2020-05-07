@@ -19,9 +19,7 @@ public class levelSelect extends javax.swing.JFrame {
     }
 
     static int level;
-    public static int levelSel() {
-        return level;
-    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -284,6 +282,9 @@ public class levelSelect extends javax.swing.JFrame {
         level = 12;
     }//GEN-LAST:event_level12ActionPerformed
 
+    public static int levelSel() {
+        return level;
+    }
     /**
      * @param args the command line arguments
      */

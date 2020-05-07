@@ -23,17 +23,21 @@ public class GameBoard extends javax.swing.JFrame {
     Image offScrImg;
     Graphics offScrGraph;
     
-    private void setup(){
+    private void startup(){
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
-                if (x > (width*0.75)){
+                if ((x > (width*0.75)) && (levelSel() > 5)){
                     stuff[stuff.length - 1].territory = 2;
                 } else if (x < (width*0.25)){
                     stuff[stuff.length - 1].territory = 1;
                 }
             }
         }
+    }
+    
+    private void setup(){
+        startup();
         //To add a new type of boid just copy pasta and change the needed fields
         int[] p = {2, 3};
         int[] q = {3};
@@ -269,16 +273,7 @@ public class GameBoard extends javax.swing.JFrame {
             boid.newstate = 0;
             boid.territory = 0;
         }
-        for (int y = 0; y < height; y++){
-            for (int x = 0; x < width; x++){
-                stuff = EOU.add(stuff, new Boid(x, y));
-                if (x > (width*0.75)){
-                    stuff[stuff.length - 1].territory = 2;
-                } else if (x < (width*0.25)){
-                    stuff[stuff.length - 1].territory = 1;
-                }
-            }
-        }
+        startup();
         repain();
     }//GEN-LAST:event_ResetButtonActionPerformed
 
