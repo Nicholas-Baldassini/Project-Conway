@@ -23,23 +23,25 @@ public class GameBoard extends javax.swing.JFrame {
     Image offScrImg;
     Graphics offScrGraph;
     
-    int level = levelSel();
+    static int levelSel;
+    int tilesLeft;
     
-    private void startup(){
+    private void startup(int level){
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
-                if ((x > (width*0.75)) && (level > 5)){
+                if ((x > (width*0.75)) && (level >= 5) && (level <= 8)){
                     stuff[stuff.length - 1].territory = 2;
                 } else if (x < (width*0.25)){
                     stuff[stuff.length - 1].territory = 1;
                 }
             }
         }
+        
     }
     
-    private void setup(){
-        startup();
+    private void setup(int level){
+        startup(level);
         //To add a new type of boid just copy pasta and change the needed fields
         int[] p = {2, 3};
         int[] q = {3};
@@ -52,9 +54,10 @@ public class GameBoard extends javax.swing.JFrame {
         rules = EOU.add(rules, new Rule(3, p, q));
     }
     
-    public GameBoard() {
-        setup();
+    public GameBoard(int level) {
+        setup(level);
         
+        levelSel = level;
         initComponents();
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
@@ -137,6 +140,7 @@ public class GameBoard extends javax.swing.JFrame {
         ResetButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,6 +200,8 @@ public class GameBoard extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("number of tiles");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,7 +212,9 @@ public class GameBoard extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PlayButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(MenuButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BackButton)
@@ -224,7 +232,8 @@ public class GameBoard extends javax.swing.JFrame {
                     .addComponent(PlayButton)
                     .addComponent(ResetButton)
                     .addComponent(BackButton)
-                    .addComponent(MenuButton))
+                    .addComponent(MenuButton)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -266,6 +275,7 @@ public class GameBoard extends javax.swing.JFrame {
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
         repain();
+        jLabel1.setText("tiles left");
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
@@ -275,7 +285,7 @@ public class GameBoard extends javax.swing.JFrame {
             boid.newstate = 0;
             boid.territory = 0;
         }
-        startup();
+        startup(levelSel);
         repain();
     }//GEN-LAST:event_ResetButtonActionPerformed
 
@@ -334,7 +344,7 @@ public class GameBoard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GameBoard().setVisible(true);
+                new GameBoard(levelSel).setVisible(true);
             }
         });
     }
@@ -344,6 +354,7 @@ public class GameBoard extends javax.swing.JFrame {
     private javax.swing.JButton MenuButton;
     private javax.swing.JButton PlayButton;
     private javax.swing.JButton ResetButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
