@@ -31,11 +31,11 @@ public class mainMenu extends javax.swing.JFrame {
         creditsbutton = new java.awt.Button();
         playbutton = new java.awt.Button();
         quitbutton = new java.awt.Button();
+        tutorialButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(204, 204, 204));
-        setMaximumSize(new java.awt.Dimension(500, 500));
         setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
 
@@ -79,6 +79,15 @@ public class mainMenu extends javax.swing.JFrame {
         getContentPane().add(quitbutton);
         quitbutton.setBounds(140, 250, 210, 40);
 
+        tutorialButton.setText("Game Guide");
+        tutorialButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tutorialButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tutorialButton);
+        tutorialButton.setBounds(140, 350, 210, 40);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -106,6 +115,13 @@ public class mainMenu extends javax.swing.JFrame {
     private void playbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_playbuttonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_playbuttonMouseClicked
+
+    private void tutorialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tutorialButtonActionPerformed
+        //go to the tutorial menu
+        TutorialMenu tutMnu = new TutorialMenu();
+        tutMnu.setVisible(true);
+        dispose(); // closes current frame
+    }//GEN-LAST:event_tutorialButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,5 +164,6 @@ public class mainMenu extends javax.swing.JFrame {
     private java.awt.Button creditsbutton;
     private java.awt.Button playbutton;
     private java.awt.Button quitbutton;
+    private javax.swing.JButton tutorialButton;
     // End of variables declaration//GEN-END:variables
 }
