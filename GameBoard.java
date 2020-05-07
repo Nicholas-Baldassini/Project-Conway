@@ -72,8 +72,16 @@ public class GameBoard extends javax.swing.JFrame {
         TimerTask task = new TimerTask(){
             public void run(){
                 if (play){
-                    for(Boid boid:stuff){
-                        boid.update(stuff, rules);
+                    for(int r = 0; r < stuff.length; r++){
+                        Boid[] hold = {};
+                        for (int i = EOU.max(0, r-width-1); i < EOU.min(r-width+2, stuff.length); i++){
+                            hold = EOU.add(hold, stuff[i]);
+                        }for (int i = EOU.max(0, r-1); i < EOU.min(r+2, stuff.length); i++){
+                            hold = EOU.add(hold, stuff[i]);
+                        }for (int i = EOU.max(0, r+width-1); i < EOU.min(r+width+2, stuff.length); i++){
+                            hold = EOU.add(hold, stuff[i]);
+                        }
+                        stuff[r].update(hold, rules);
                     }
                     for(Boid boid:stuff){
                         boid.fix();

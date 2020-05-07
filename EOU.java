@@ -58,4 +58,16 @@ public class EOU {
         newlist[l] = n;
         return newlist;
     }
+    
+    public static int min(int n, int n2){
+        if (n < n2){
+            return n;
+        }return n2;
+    }
+    
+    public static int max(int n, int n2){
+        if (n < n2){
+            return n2;
+        }return n;
+    }
 }
