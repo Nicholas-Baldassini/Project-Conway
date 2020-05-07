@@ -66,8 +66,11 @@ public class GameBoard extends javax.swing.JFrame {
     }
     
     private void repain(){
+        //color the background
         offScrGraph.setColor(jPanel1.getBackground());
         offScrGraph.fillRect(0, 0, jPanel1.getWidth(), jPanel1.getHeight());
+        
+        //set the color of a selected square to 1
         for (Boid thing : stuff) {
             if (thing.state == 1) {
                 offScrGraph.setColor(Color.YELLOW);
@@ -76,6 +79,8 @@ public class GameBoard extends javax.swing.JFrame {
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }
         }
+        
+        //set the color of the lines to black
         offScrGraph.setColor(Color.BLACK);
         for (int i = 1; i < height; i++){
             int y = i*jPanel1.getHeight()/height;
@@ -86,6 +91,7 @@ public class GameBoard extends javax.swing.JFrame {
             offScrGraph.drawLine(x, 0, x, jPanel1.getHeight());
         }
         
+        //draw everything
         jPanel1.getGraphics().drawImage(offScrImg, 0, 0, jPanel1);
     }
 
@@ -176,18 +182,21 @@ public class GameBoard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        play = !play;
-        if (play) jButton1.setText("Pause");
+        play = !play; //switch play variable on and off uppon click
+        
+        //shange the text of the play button
+        if (play) jButton1.setText("Pause"); 
         else jButton1.setText("Play");
         //jLabel1.setText("Level" + Integer.toString(levelSel()));
-        repain();
+        repain(); //update the squares
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        //for individual clicks
+        //xet the square that was clicked
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
 
+        //update the square
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
                 if (boid.state == 0){
@@ -203,12 +212,14 @@ public class GameBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseClicked
 
     private void jPanel1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentResized
+        //draw the graph relative to the size of the screen
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
         repain();
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //resset all the squares
         for (Boid boid:stuff){
             boid.state = 0;
             boid.territory = 0;
@@ -228,13 +239,14 @@ public class GameBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        //go back to the level select screen
         levelSelect lvlSel = new levelSelect();
         lvlSel.setVisible(true);
         dispose(); // closes current frame
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
-        // go to main menu
+        // go to main menu screen
         mainMenu mnMnu = new mainMenu();
         mnMnu.setVisible(true);
         dispose(); // closes current frame

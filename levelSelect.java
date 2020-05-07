@@ -182,7 +182,7 @@ public class levelSelect extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void level11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level11ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 11
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -197,7 +197,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_backbuttonActionPerformed
 
     private void level1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level1ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 1
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -205,7 +205,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level1ActionPerformed
 
     private void level2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level2ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 2
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -213,7 +213,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level2ActionPerformed
 
     private void level3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level3ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 3
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -221,7 +221,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level3ActionPerformed
 
     private void level4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level4ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 4
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -229,7 +229,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level4ActionPerformed
 
     private void level5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level5ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 5
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -237,7 +237,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level5ActionPerformed
 
     private void level6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level6ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 6
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -245,7 +245,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level6ActionPerformed
 
     private void level7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level7ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 7
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -253,7 +253,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level7ActionPerformed
 
     private void level8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level8ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 8
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -261,7 +261,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level8ActionPerformed
 
     private void level9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level9ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 9
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -269,7 +269,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level9ActionPerformed
 
     private void level10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level10ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 10
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
@@ -277,7 +277,7 @@ public class levelSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_level10ActionPerformed
 
     private void level12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level12ActionPerformed
-        //open the game board
+        //open the game board and update the level variable to 12
         GameBoard sandbox = new GameBoard();
         sandbox.setVisible(true);
         dispose(); // closes current frame
