@@ -112,6 +112,11 @@ public class GameBoard extends javax.swing.JFrame {
                 int y = thing.y * jPanel1.getHeight() / height;
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
+            }else if (thing.state == 3){
+                offScrGraph.setColor(Color.BLACK);
+                int y = thing.y * jPanel1.getHeight() / height;
+                int x = thing.x * jPanel1.getWidth() / width;
+                offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }
         }
         
@@ -283,7 +288,7 @@ public class GameBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
-        //resset all the squares
+        //reset all the squares
         for (Boid boid:stuff){
             boid.state = 0;
             boid.newstate = 0;
