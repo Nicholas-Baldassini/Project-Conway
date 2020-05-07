@@ -30,7 +30,7 @@ public class GameBoard extends javax.swing.JFrame {
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
-                if ((x > (width*0.75)) && (level >= 5) && (level <= 8)){
+                if ((x > (width*0.75)) && ((level == 6) || ((level >= 8) && (level <= 12)))){
                     stuff[stuff.length - 1].territory = 2;
                 } else if (x < (width*0.25)){
                     stuff[stuff.length - 1].territory = 1;
@@ -251,14 +251,14 @@ public class GameBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_PlayButtonActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
-        //xet the square that was clicked
+        //get the square that was clicked
         int j = width * evt.getX()/jPanel1.getWidth();
         int i = height * evt.getY()/jPanel1.getHeight();
 
         //update the square
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
-                if (boid.state == 0){
+                if ((boid.state == 0) && (boid.territory == 1)){
                     boid.newstate = boid.territory;
                     boid.state = boid.territory;
                 }else{
