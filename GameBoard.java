@@ -78,12 +78,6 @@ public class GameBoard extends javax.swing.JFrame {
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }
-            if (thing.state == 2) {
-                offScrGraph.setColor(Color.BLUE);
-                int y = thing.y * jPanel1.getHeight() / height;
-                int x = thing.x * jPanel1.getWidth() / width;
-                offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
-            }
         }
         
         //set the color of the lines to black
