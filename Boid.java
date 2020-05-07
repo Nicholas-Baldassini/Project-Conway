@@ -54,10 +54,6 @@ public class Boid {
         if (this.state == 0 && count[0] > 0){
             for (int q = 0; q<rules.length; q++){
                 if (Arrays.binarySearch(rules[q].spawn, count[0]) > -1 && count[q + 1] > count[0]/2){
-                    for (int c: count) {
-                        EOU.print(c);
-                        
-                    }EOU.println("");
                     this.newstate = rules[q].team;
                     break;
                 }
