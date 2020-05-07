@@ -127,8 +127,8 @@ public class GameBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        PlayButton = new javax.swing.JButton();
+        ResetButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
         MenuButton = new javax.swing.JButton();
 
@@ -162,17 +162,17 @@ public class GameBoard extends javax.swing.JFrame {
             .addGap(0, 314, Short.MAX_VALUE)
         );
 
-        jButton1.setText("Play");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        PlayButton.setText("Play");
+        PlayButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                PlayButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Reset");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ResetButton.setText("Reset");
+        ResetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ResetButtonActionPerformed(evt);
             }
         });
 
@@ -199,13 +199,13 @@ public class GameBoard extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(PlayButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
                         .addComponent(MenuButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BackButton)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)))
+                        .addComponent(ResetButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -215,8 +215,8 @@ public class GameBoard extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
+                    .addComponent(PlayButton)
+                    .addComponent(ResetButton)
                     .addComponent(BackButton)
                     .addComponent(MenuButton))
                 .addContainerGap())
@@ -225,15 +225,15 @@ public class GameBoard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void PlayButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlayButtonActionPerformed
         play = !play; //switch play variable on and off uppon click
         
         //shange the text of the play button
-        if (play) jButton1.setText("Pause"); 
-        else jButton1.setText("Play");
+        if (play) PlayButton.setText("Pause"); 
+        else PlayButton.setText("Play");
         //jLabel1.setText("Level" + Integer.toString(levelSel()));
         repain(); //update the squares
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_PlayButtonActionPerformed
 
     private void jPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseClicked
         //xet the square that was clicked
@@ -262,14 +262,25 @@ public class GameBoard extends javax.swing.JFrame {
         repain();
     }//GEN-LAST:event_jPanel1ComponentResized
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
         //resset all the squares
         for (Boid boid:stuff){
             boid.state = 0;
+            boid.newstate = 0;
             boid.territory = 0;
         }
+        for (int y = 0; y < height; y++){
+            for (int x = 0; x < width; x++){
+                stuff = EOU.add(stuff, new Boid(x, y));
+                if (x > (width*0.75)){
+                    stuff[stuff.length - 1].territory = 2;
+                } else if (x < (width*0.25)){
+                    stuff[stuff.length - 1].territory = 1;
+                }
+            }
+        }
         repain();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ResetButtonActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
         /*
@@ -334,8 +345,8 @@ public class GameBoard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JButton MenuButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton PlayButton;
+    private javax.swing.JButton ResetButton;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
