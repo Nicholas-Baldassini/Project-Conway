@@ -22,7 +22,7 @@ public class Boid {
         this.y = y;
         this.state = 0;
         this.newstate = 0;
-        this.territory = 1;
+        this.territory = 0;
     }
     
     /*

@@ -27,8 +27,10 @@ public class GameBoard extends javax.swing.JFrame {
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
-                if (x > width/2){
+                if (x > (width*0.75)){
                     stuff[stuff.length - 1].territory = 2;
+                } else if (x < (width*0.25)){
+                    stuff[stuff.length - 1].territory = 1;
                 }
             }
         }
@@ -73,7 +75,7 @@ public class GameBoard extends javax.swing.JFrame {
         offScrGraph.setColor(jPanel1.getBackground());
         offScrGraph.fillRect(0, 0, jPanel1.getWidth(), jPanel1.getHeight());
         
-        //set the color of a selected square to 1
+        //set the colors of the boxes
         for (Boid thing : stuff) {
             if (thing.state == 0){
                 if (thing.territory == 1){
