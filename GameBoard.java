@@ -56,6 +56,9 @@ public class GameBoard extends javax.swing.JFrame {
         p = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8};
         q = new int[] {};
         rules = EOU.add(rules, new Rule(3, p, q));
+        
+        q = new int[] {1, 2, 4};
+        rules = EOU.add(rules, new Rule(4, p, q));
     }
     
     public GameBoard(int level) {
@@ -114,6 +117,11 @@ public class GameBoard extends javax.swing.JFrame {
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }else if (thing.state == 3){
                 offScrGraph.setColor(Color.BLACK);
+                int y = thing.y * jPanel1.getHeight() / height;
+                int x = thing.x * jPanel1.getWidth() / width;
+                offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
+            }else if (thing.state == 4){
+                offScrGraph.setColor(Color.PINK);
                 int y = thing.y * jPanel1.getHeight() / height;
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
