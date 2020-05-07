@@ -91,16 +91,11 @@ public class mainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_creditsbuttonActionPerformed
 
     private void playbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_playbuttonActionPerformed
-        // TODO add your handling code here:
-        GameBoard sandbox = new GameBoard();
-        sandbox.setVisible(true);
-        dispose(); // closes current frame
-        
-        /*
+        //go to level select screen
         levelSelect lvlSel = new levelSelect();
         lvlSel.setVisible(true);
         dispose(); // closes current frame
-        */
+        
     }//GEN-LAST:event_playbuttonActionPerformed
 
     private void quitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbuttonActionPerformed

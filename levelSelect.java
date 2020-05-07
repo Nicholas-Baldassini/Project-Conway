@@ -18,6 +18,11 @@ public class levelSelect extends javax.swing.JFrame {
         initComponents();
     }
 
+    static int level;
+    public static int levelSel() {
+        return level;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -177,58 +182,106 @@ public class levelSelect extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void level11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level11ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 11;
     }//GEN-LAST:event_level11ActionPerformed
 
     private void backbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbuttonActionPerformed
-        // TODO add your handling code here:
+        // go to main menu
         mainMenu mnMnu = new mainMenu();
         mnMnu.setVisible(true);
         dispose(); // closes current frame
     }//GEN-LAST:event_backbuttonActionPerformed
 
     private void level1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level1ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 1;
     }//GEN-LAST:event_level1ActionPerformed
 
     private void level2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level2ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 2;
     }//GEN-LAST:event_level2ActionPerformed
 
     private void level3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level3ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 3;
     }//GEN-LAST:event_level3ActionPerformed
 
     private void level4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level4ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 4;
     }//GEN-LAST:event_level4ActionPerformed
 
     private void level5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level5ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 5;
     }//GEN-LAST:event_level5ActionPerformed
 
     private void level6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level6ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 6;
     }//GEN-LAST:event_level6ActionPerformed
 
     private void level7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level7ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 7;
     }//GEN-LAST:event_level7ActionPerformed
 
     private void level8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level8ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 8;
     }//GEN-LAST:event_level8ActionPerformed
 
     private void level9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level9ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 9;
     }//GEN-LAST:event_level9ActionPerformed
 
     private void level10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level10ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 10;
     }//GEN-LAST:event_level10ActionPerformed
 
     private void level12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_level12ActionPerformed
-        // TODO add your handling code here:
+        //open the game board
+        GameBoard sandbox = new GameBoard();
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+        level = 12;
     }//GEN-LAST:event_level12ActionPerformed
 
     /**
