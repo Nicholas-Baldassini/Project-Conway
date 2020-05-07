@@ -24,9 +24,9 @@ public class GameBoard extends javax.swing.JFrame {
     Graphics offScrGraph;
     
     private void setup(){
-        for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; j++){
-                stuff = EOU.add(stuff, new Boid(j, i));
+        for (int y = 0; y < height; y++){
+            for (int x = 0; x < width; x++){
+                stuff = EOU.add(stuff, new Boid(x, y));
             }
         }
         //To add a new type of boid just copy pasta and change the needed fields
