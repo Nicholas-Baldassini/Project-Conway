@@ -111,7 +111,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Level 1: a sandbox mode. Place infinite tiles to get a feel for the game."/>
+        <Property name="text" type="java.lang.String" value="Level 1: A sandbox mode. Place infinite tiles to get a feel for the game."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -161,7 +161,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Level 12: Bonus Level! Watch out for the black void!"/>
+        <Property name="text" type="java.lang.String" value="Level 12: Bonus Level! Watch out for the pink void!"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">

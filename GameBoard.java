@@ -45,13 +45,18 @@ public class GameBoard extends javax.swing.JFrame {
                 
                 //set up for levels
                 if (level == 3) {
-                    if ((x == 100) && ((y>=20) && (y <= 80))){
+                    if ((x == 100) && (y>=20) && (y <= 80)){
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
                     }
                 } else if (level == 4) {
                     tileCount = 20;
                     tilesLeft = Integer.toString(tileCount);
+                } else if (level == 5) {
+                    if ( ((x == 130) && (y>=35) && (y <= 65)) || ((x == 80) && (((y>=15) && (y <= 40)) || ((y>=60) && (y <= 85)))) || ((x == 120) && (((y>=0) && (y <= 20)) || ((y>=80) && (y <= 100))))){
+                        stuff[stuff.length - 1].newstate = 3;
+                        stuff[stuff.length - 1].state = 3;
+                    }
                 }
             }
         }
@@ -323,11 +328,12 @@ public class GameBoard extends javax.swing.JFrame {
                             boid.state = boid.territory;
                             tileCount -=1;
                         }
-                    }else{
+                    }else if (boid.state == 1){
                         boid.newstate = 0;
                         boid.state = 0;
                         tileCount += 1;
                     }
+                    tilesLeft = Integer.toString(tileCount);
                 } else {
                     if ((boid.state == 0) && (boid.territory == 1)){
                         boid.newstate = boid.territory;
@@ -339,7 +345,6 @@ public class GameBoard extends javax.swing.JFrame {
                 }
             }
         }
-        tilesLeft = Integer.toString(tileCount);
         jLabel1.setText(tilesLeft + " tiles");
         repain();
     }//GEN-LAST:event_jPanel1MouseClicked

@@ -51,7 +51,7 @@ public class LevelGuide extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Level 1: a sandbox mode. Place infinite tiles to get a feel for the game.");
+        jLabel1.setText("Level 1: A sandbox mode. Place infinite tiles to get a feel for the game.");
 
         jLabel2.setText("Level 2: Attempt to create structures to reach the other side.");
 
@@ -71,7 +71,7 @@ public class LevelGuide extends javax.swing.JFrame {
 
         jLabel10.setText("Level 10: The enemies are back, but this time you are low on resources.");
 
-        jLabel11.setText("Level 12: Bonus Level! Watch out for the black void!");
+        jLabel11.setText("Level 12: Bonus Level! Watch out for the pink void!");
 
         jLabel12.setText("Level 11: The final Level! Includes all the challenges you have faced to this point. ");
 
