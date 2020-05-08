@@ -26,7 +26,6 @@ public class GameBoard extends javax.swing.JFrame {
     static int levelSel;
     String tilesLeft = "infinate";
     int tileCount = 9999999;
-    int result = 0; //0 means you are playing, 1 meeans you lose, 2 means you win
     
     private void startup(int level){
         for (int y = 0; y < height; y++){
@@ -102,17 +101,25 @@ public class GameBoard extends javax.swing.JFrame {
                         boid.fix();
                     }
                     repain();
-                    if (result == 1){
-                        //go to lose menue
-                        loseMenu lsMnu = new loseMenu();
-                        lsMnu.setVisible(true);
-                        dispose(); // closes current frame
-                    } else if (result == 2) {
-                        //go to win menu
-                        winMenu wnMnu = new winMenu();
-                        wnMnu.setVisible(true);
-                        dispose(); // closes current frame
-                    }
+                    /*for (int y = 0; y < height; y++){
+                        for (int x = 0; x < width; x++){
+                            stuff = EOU.add(stuff, new Boid(x, y));
+
+                            if ((x == width) && (stuff[stuff.length - 1].state == 1)) {
+                                //go to win menu
+                                winMenu wnMnu = new winMenu();
+                                wnMnu.setVisible(true);
+                                dispose(); // closes current frame
+                                play = false;
+                            } else if ((x == 0) && (stuff[stuff.length - 1].territory != 1)) {
+                                //go to lose menue
+                                loseMenu lsMnu = new loseMenu();
+                                lsMnu.setVisible(true);
+                                dispose(); // closes current frame
+                                play = false;
+                            }
+                        }
+                    }*/
                 }
             }
         };
