@@ -24,12 +24,15 @@ public class GameBoard extends javax.swing.JFrame {
     Graphics offScrGraph;
     
     static int levelSel;
-    int tilesLeft;
+    String tilesLeft = "infinate";
+    int tileCount = 9999999;
     
     private void startup(int level){
         for (int y = 0; y < height; y++){
             for (int x = 0; x < width; x++){
                 stuff = EOU.add(stuff, new Boid(x, y));
+                
+                //setting territories
                 if (level == 1) {
                     stuff[stuff.length - 1].territory = 1;
                 } else {
@@ -38,6 +41,17 @@ public class GameBoard extends javax.swing.JFrame {
                     } else if (x < (width*0.25)){
                         stuff[stuff.length - 1].territory = 1;
                     }
+                }
+                
+                //set up for levels
+                if (level == 3) {
+                    if ((x == 100) && ((y>=20) && (y <= 80))){
+                        stuff[stuff.length - 1].newstate = 3;
+                        stuff[stuff.length - 1].state = 3;
+                    }
+                } else if (level == 4) {
+                    tileCount = 20;
+                    tilesLeft = Integer.toString(tileCount);
                 }
             }
         }
@@ -283,15 +297,31 @@ public class GameBoard extends javax.swing.JFrame {
         //update the square
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
-                if ((boid.state == 0) && (boid.territory == 1)){
-                    boid.newstate = boid.territory;
-                    boid.state = boid.territory;
-                }else{
-                    boid.newstate = 0;
-                    boid.state = 0;
+                if (levelSel == 4) {
+                    if ((boid.state == 0) && (boid.territory == 1)){
+                        if (tileCount > 0) {
+                            boid.newstate = boid.territory;
+                            boid.state = boid.territory;
+                            tileCount -=1;
+                        }
+                    }else{
+                        boid.newstate = 0;
+                        boid.state = 0;
+                        tileCount += 1;
+                    }
+                } else {
+                    if ((boid.state == 0) && (boid.territory == 1)){
+                        boid.newstate = boid.territory;
+                        boid.state = boid.territory;
+                    }else{
+                        boid.newstate = 0;
+                        boid.state = 0;
+                    }
                 }
             }
         }
+        tilesLeft = Integer.toString(tileCount);
+        jLabel1.setText(tilesLeft + " tiles");
         repain();
     }//GEN-LAST:event_jPanel1MouseClicked
 
@@ -300,7 +330,7 @@ public class GameBoard extends javax.swing.JFrame {
         offScrImg = createImage(jPanel1.getWidth(), jPanel1.getHeight());
         offScrGraph = offScrImg.getGraphics();
         repain();
-        jLabel1.setText("tiles left");
+        jLabel1.setText(tilesLeft + " tiles");
     }//GEN-LAST:event_jPanel1ComponentResized
 
     private void ResetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetButtonActionPerformed
