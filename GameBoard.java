@@ -57,6 +57,16 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
                     }
+                } else if (level == 6) {
+                    if (((x == 160) && (y == 30)) || ((x == 161) && (y == 30)) || ((x == 161) && (y == 29)) || ((x == 161) && (y == 31)) || 
+                            ((x == 162) && (y == 29)) || ((x == 162) && (y == 31)) || ((x == 162) && (y == 32)) || ((x == 163) && (y == 30)) || 
+                            ((x == 163) && (y == 31)) || ((x == 163) && (y == 32)) || ((x == 164) && (y == 31)) || ((x == 164) && (y == 30)) ||
+                            ((x == 160) && (y == 70)) || ((x == 161) && (y == 70)) || ((x == 161) && (y == 69)) || ((x == 161) && (y == 71)) || 
+                            ((x == 162) && (y == 69)) || ((x == 162) && (y == 71)) || ((x == 162) && (y == 72)) || ((x == 163) && (y == 70)) || 
+                            ((x == 163) && (y == 71)) || ((x == 163) && (y == 72)) || ((x == 164) && (y == 71)) || ((x == 164) && (y == 70))) {
+                        stuff[stuff.length - 1].newstate = 2;
+                        stuff[stuff.length - 1].state = 2;
+                    }
                 }
             }
         }
@@ -340,7 +350,7 @@ public class GameBoard extends javax.swing.JFrame {
                     if ((boid.state == 0) && (boid.territory == 1)){
                         boid.newstate = boid.territory;
                         boid.state = boid.territory;
-                    }else{
+                    }else if (boid.state == 1) {
                         boid.newstate = 0;
                         boid.state = 0;
                     }
