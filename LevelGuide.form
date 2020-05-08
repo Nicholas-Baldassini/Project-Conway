@@ -126,7 +126,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Level 6: An enimy aproaching! Don&apos;t let them get to your end."/>
+        <Property name="text" type="java.lang.String" value="Level 6: An enemy aproaching! Don&apos;t let them get to your end."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -156,7 +156,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Level 11: The final Level! Includes all the chalanges you have faced all in one level. "/>
+        <Property name="text" type="java.lang.String" value="Level 11: The final Level! Includes all the challenges you have faced all in one level. "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel13">

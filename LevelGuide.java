@@ -61,7 +61,7 @@ public class LevelGuide extends javax.swing.JFrame {
 
         jLabel5.setText("Level 5: There are more walls you have to avoid.");
 
-        jLabel6.setText("Level 6: An enimy aproaching! Don't let them get to your end.");
+        jLabel6.setText("Level 6: An enemy aproaching! Don't let them get to your end.");
 
         jLabel7.setText("Leve 7: Walls and limited resources!");
 
@@ -73,7 +73,7 @@ public class LevelGuide extends javax.swing.JFrame {
 
         jLabel11.setText("Level 12: Bonus Level! Watch out for the black void!");
 
-        jLabel12.setText("Level 11: The final Level! Includes all the chalanges you have faced all in one level. ");
+        jLabel12.setText("Level 11: The final Level! Includes all the challenges you have faced all in one level. ");
 
         jLabel13.setText("There will be walls, tough enimies, and you only have limited reesources.");
 
