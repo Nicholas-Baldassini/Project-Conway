@@ -101,6 +101,25 @@ public class GameBoard extends javax.swing.JFrame {
                         boid.fix();
                     }
                     repain();
+                    /*for (int y = 0; y < height; y++){
+                        for (int x = 0; x < width; x++){
+                            stuff = EOU.add(stuff, new Boid(x, y));
+
+                            if ((x == width) && (stuff[stuff.length - 1].state == 1)) {
+                                //go to win menu
+                                winMenu wnMnu = new winMenu();
+                                wnMnu.setVisible(true);
+                                dispose(); // closes current frame
+                                play = false;
+                            } else if ((x == 0) && (stuff[stuff.length - 1].territory != 1)) {
+                                //go to lose menue
+                                loseMenu lsMnu = new loseMenu();
+                                lsMnu.setVisible(true);
+                                dispose(); // closes current frame
+                                play = false;
+                            }
+                        }
+                    }*/
                 }
             }
         };
