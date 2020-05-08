@@ -51,66 +51,73 @@ public class LevelGuide extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Level 1: Sandbox gamemode! Place as many tiles as you want to get a feel for the game");
+        jLabel1.setText("Level 1: a sandbox mode. Place infinite tiles to get a feel for the game.");
 
-        jLabel2.setText("Level 2: Attempt to create structures to get you to the other side.");
+        jLabel2.setText("Level 2: Attempt to create structures to reach the other side.");
 
         jLabel3.setText("Level 3: There is a wall blocking your path! Figure out a way around.");
 
-        jLabel4.setText("Level 4: Be careful! You only have a limited amount of tiles.");
+        jLabel4.setText("Level 4: Be careful! Your tiles are limited.");
 
         jLabel5.setText("Level 5: There are more walls you have to avoid.");
 
-        jLabel6.setText("Level 6: An enemy aproaching! Don't let them get to your end.");
+        jLabel6.setText("Level 6: An enemy is approaching! Don't let them reach your side.");
 
-        jLabel7.setText("Leve 7: Walls and limited resources!");
+        jLabel7.setText("Leve 7: You must face walls and limited resources!");
 
-        jLabel8.setText("Level 8: The enimies are getting stronger!");
+        jLabel8.setText("Level 8: The enemies are getting stronger!");
 
-        jLabel9.setText("Level 9: There are the enimies! Use the walls to your advantage.");
+        jLabel9.setText("Level 9: Use the walls to your advantage in your quest against the enemies.");
 
-        jLabel10.setText("Level 10: The enimies are back but you are running low on resources.");
+        jLabel10.setText("Level 10: The enemies are back, but this time you are low on resources.");
 
         jLabel11.setText("Level 12: Bonus Level! Watch out for the black void!");
 
-        jLabel12.setText("Level 11: The final Level! Includes all the challenges you have faced all in one level. ");
+        jLabel12.setText("Level 11: The final Level! Includes all the challenges you have faced to this point. ");
 
-        jLabel13.setText("There will be walls, tough enimies, and you only have limited reesources.");
+        jLabel13.setText("There will be walls, tough enemies, and you have limited reesources.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(38, 38, 38))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backButton)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel13)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8)
-                                .addComponent(jLabel9)
-                                .addComponent(jLabel10)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 49, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
-                                .addComponent(jLabel12)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(206, 206, 206))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel12))
+                                .addGap(16, 16, 16))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(backButton)
-                .addGap(18, 18, 18)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -133,10 +140,10 @@ public class LevelGuide extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         pack();
