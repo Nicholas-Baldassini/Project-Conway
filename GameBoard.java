@@ -24,7 +24,7 @@ public class GameBoard extends javax.swing.JFrame {
     Graphics offScrGraph;
     
     static int levelSel;
-    String tilesLeft = "infinate";
+    String tilesLeft = "infinite";
     int tileCount = 9999999;
     
     private void startup(int level){
@@ -101,6 +101,8 @@ public class GameBoard extends javax.swing.JFrame {
                             hold = EOU.add(hold, stuff[i]);
                         }
                         stuff[r].update(hold, rules);
+                        
+                        stuff[r].tUpdate(stuff[EOU.min(r+1, stuff.length-1)]);
                     }
                     for(Boid boid:stuff){
                         boid.fix();

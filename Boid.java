@@ -73,4 +73,10 @@ public class Boid {
             this.territory = this.newstate;
         }
     }
+
+    void tUpdate(Boid boid) {
+        if (this.y == boid.y && boid.territory == 1 && this.territory == 0){
+            this.territory = 1;
+        }
+    }
 }
