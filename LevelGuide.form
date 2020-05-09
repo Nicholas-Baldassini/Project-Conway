@@ -36,7 +36,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -161,7 +161,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Level 12: Bonus Level! Watch out for the pink void!"/>
+        <Property name="text" type="java.lang.String" value="Level 12: Bonus Level! Watch out for the purple void!"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel12">

@@ -149,6 +149,12 @@ public class GameBoard extends javax.swing.JFrame {
                     tileCount = 12;
                     tilesLeft = Integer.toString(tileCount);
                 }
+                if (level == 12) {
+                    if (((x == 100) && (y == 50))) {
+                        stuff[stuff.length - 1].newstate = 4;
+                        stuff[stuff.length - 1].state = 4;
+                    }
+                }
             }
         }
         
@@ -263,7 +269,7 @@ public class GameBoard extends javax.swing.JFrame {
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);
             }else if (thing.state == 4){
-                offScrGraph.setColor(Color.PINK);
+                offScrGraph.setColor(Color.MAGENTA);
                 int y = thing.y * jPanel1.getHeight() / height;
                 int x = thing.x * jPanel1.getWidth() / width;
                 offScrGraph.fillRect(x, y, jPanel1.getWidth()/width, jPanel1.getHeight()/height);

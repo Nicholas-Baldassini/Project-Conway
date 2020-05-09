@@ -71,7 +71,7 @@ public class LevelGuide extends javax.swing.JFrame {
 
         jLabel10.setText("Level 10: The enemies are back, but this time you are low on resources.");
 
-        jLabel11.setText("Level 12: Bonus Level! Watch out for the pink void!");
+        jLabel11.setText("Level 12: Bonus Level! Watch out for the purple void!");
 
         jLabel12.setText("Level 11: The final Level! Includes all the challenges you have faced to this point. ");
 
@@ -92,7 +92,7 @@ public class LevelGuide extends javax.swing.JFrame {
                         .addComponent(backButton)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 49, Short.MAX_VALUE)
+                        .addGap(0, 43, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel11)
