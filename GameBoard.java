@@ -49,10 +49,10 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
                     }
-                } else if (level == 4) {
+                } else if ((level == 4) || ( level == 7)) {
                     tileCount = 20;
                     tilesLeft = Integer.toString(tileCount);
-                } else if (level == 5) {
+                } else if ((level == 5) || ( level == 7)) {
                     if ( ((x == 130) && (y>=35) && (y <= 65)) || ((x == 80) && (((y>=15) && (y <= 40)) || ((y>=60) && (y <= 85)))) || ((x == 120) && (((y>=0) && (y <= 20)) || ((y>=80) && (y <= 100))))){
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
@@ -67,7 +67,7 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].newstate = 2;
                         stuff[stuff.length - 1].state = 2;
                     }
-                }
+                } 
             }
         }
         
@@ -378,6 +378,7 @@ public class GameBoard extends javax.swing.JFrame {
         }
         startup(levelSel);
         repain();
+        jLabel1.setText(tilesLeft + " tiles");
     }//GEN-LAST:event_ResetButtonActionPerformed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
