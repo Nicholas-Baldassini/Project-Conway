@@ -44,23 +44,23 @@ public class GameBoard extends javax.swing.JFrame {
                 }
                 
                 //set up for levels
-                if (level == 3) {
+                if (level == 3) { //walls for level 3
                     if ((x == 100) && (y>=20) && (y <= 80)){
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
                     }
                 } 
-                if ((level == 4) || ( level == 7)) {
+                if ((level == 4) || ( level == 7)) { //limited tiles for level 4 and 7
                     tileCount = 20;
                     tilesLeft = Integer.toString(tileCount);
                 } 
-                if ((level == 5) || ( level == 7)  || (level == 9)) {
+                if ((level == 5) || ( level == 7)  || (level == 9)) { // walls for level 5, 7, and 9
                     if ( ((x == 130) && (y>=35) && (y <= 65)) || ((x == 80) && (((y>=15) && (y <= 40)) || ((y>=60) && (y <= 85)))) || ((x == 120) && (((y>=0) && (y <= 20)) || ((y>=80) && (y <= 100))))){
                         stuff[stuff.length - 1].newstate = 3;
                         stuff[stuff.length - 1].state = 3;
                     }
                 } 
-                if (level == 6) {
+                if (level == 6) { //enimy war ships for level 6
                     if (((x == 160) && (y == 30)) || ((x == 161) && (y == 30)) || ((x == 161) && (y == 29)) || ((x == 161) && (y == 31)) || 
                             ((x == 162) && (y == 29)) || ((x == 162) && (y == 31)) || ((x == 162) && (y == 32)) || ((x == 163) && (y == 30)) || 
                             ((x == 163) && (y == 31)) || ((x == 163) && (y == 32)) || ((x == 164) && (y == 31)) || ((x == 164) && (y == 30)) ||
@@ -71,7 +71,7 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].state = 2;
                     }
                 } 
-                if ((level == 8) || (level == 9)) {
+                if ((level == 8) || (level == 9)) { //enimy war ships for level 8 and 9
                     if (((x == 160) && (y == 30)) || ((x == 161) && (y == 30)) || ((x == 161) && (y == 31)) || ((x == 161) && (y == 29)) || 
                             ((x == 162) && (y == 31)) || ((x == 162) && (y == 29)) || ((x == 162) && (y == 28)) || ((x == 163) && (y == 30)) || 
                             ((x == 163) && (y == 29)) || ((x == 163) && (y == 28)) || ((x == 164) && (y == 29)) || ((x == 164) && (y == 30)) ||
@@ -86,7 +86,8 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].state = 2;
                     }
                 }
-                if (level == 10) {
+                if (level == 10) { //set up for level 10 including warships and limited tiles
+                    //enimies
                     if (((x == 160) && (y == 25)) || ((x == 161) && (y == 25)) || ((x == 161) && (y == 24)) || ((x == 161) && (y == 26)) || 
                             ((x == 162) && (y == 24)) || ((x == 162) && (y == 26)) || ((x == 162) && (y == 27)) || ((x == 163) && (y == 25)) || 
                             ((x == 163) && (y == 26)) || ((x == 163) && (y == 27)) || ((x == 164) && (y == 26)) || ((x == 164) && (y == 25)) ||
@@ -99,6 +100,11 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].newstate = 2;
                         stuff[stuff.length - 1].state = 2;
                     }
+                    //tiles
+                    tileCount = 15;
+                    tilesLeft = Integer.toString(tileCount);
+                }
+                if (level == 11) { //complet set up for level 11 including walls, enimy war ships, and tile count
                     tileCount = 15;
                     tilesLeft = Integer.toString(tileCount);
                 }
