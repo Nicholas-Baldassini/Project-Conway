@@ -86,6 +86,22 @@ public class GameBoard extends javax.swing.JFrame {
                         stuff[stuff.length - 1].state = 2;
                     }
                 }
+                if (level == 10) {
+                    if (((x == 160) && (y == 25)) || ((x == 161) && (y == 25)) || ((x == 161) && (y == 24)) || ((x == 161) && (y == 26)) || 
+                            ((x == 162) && (y == 24)) || ((x == 162) && (y == 26)) || ((x == 162) && (y == 27)) || ((x == 163) && (y == 25)) || 
+                            ((x == 163) && (y == 26)) || ((x == 163) && (y == 27)) || ((x == 164) && (y == 26)) || ((x == 164) && (y == 25)) ||
+                            ((x == 160) && (y == 75)) || ((x == 161) && (y == 75)) || ((x == 161) && (y == 74)) || ((x == 161) && (y == 76)) || 
+                            ((x == 162) && (y == 74)) || ((x == 162) && (y == 76)) || ((x == 162) && (y == 77)) || ((x == 163) && (y == 75)) || 
+                            ((x == 163) && (y == 76)) || ((x == 163) && (y == 77)) || ((x == 164) && (y == 76)) || ((x == 164) && (y == 75)) ||
+                            ((x == 160) && (y == 49)) || ((x == 161) && (y == 49)) || ((x == 161) && (y == 48)) || ((x == 161) && (y == 50)) || 
+                            ((x == 162) && (y == 48)) || ((x == 162) && (y == 50)) || ((x == 162) && (y == 51)) || ((x == 163) && (y == 49)) || 
+                            ((x == 163) && (y == 50)) || ((x == 163) && (y == 51)) || ((x == 164) && (y == 50)) || ((x == 164) && (y == 49))) {
+                        stuff[stuff.length - 1].newstate = 2;
+                        stuff[stuff.length - 1].state = 2;
+                    }
+                    tileCount = 15;
+                    tilesLeft = Integer.toString(tileCount);
+                }
             }
         }
         
@@ -308,9 +324,9 @@ public class GameBoard extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(PlayButton)
-                        .addGap(71, 71, 71)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                        .addGap(60, 60, 60)
                         .addComponent(MenuButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(BackButton)
@@ -354,7 +370,7 @@ public class GameBoard extends javax.swing.JFrame {
         //update the square
         for (Boid boid: stuff){
             if (boid.x == j && boid.y == i){
-                if (levelSel == 4) {
+                if ((levelSel == 4) || (levelSel == 7) || ( levelSel == 10) || (levelSel == 11) || ( levelSel == 12)) {
                     if ((boid.state == 0) && (boid.territory == 1)){
                         if (tileCount > 0) {
                             boid.newstate = boid.territory;
