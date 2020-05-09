@@ -73,10 +73,26 @@ public class Boid {
             this.territory = this.newstate;
         }
     }
-
+    
+    /* 
+    Territory Update method
+    Pre: Territory to the right is claimed
+    Post: Territory is claimed
+    */
     void tUpdate(Boid boid) {
         if (this.y == boid.y && boid.territory == 1 && this.territory == 0){
             this.territory = 1;
+        }
+    }
+    
+    /* 
+    Territory Update method
+    Pre: Territory to the right is claimed
+    Post: Territory is claimed
+    */
+    void nUpdate(Boid boid) {
+        if (this.y == boid.y && boid.territory == 2 && this.territory == 0){
+            this.territory = 2;
         }
     }
 }
