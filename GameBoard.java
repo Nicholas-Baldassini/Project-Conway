@@ -173,7 +173,7 @@ public class GameBoard extends javax.swing.JFrame {
         q = new int[] {};
         rules = EOU.add(rules, new Rule(3, p, q));
         
-        q = new int[] {1, 2, 4};
+        q = new int[] {3, 5, 6, 7, 8};
         rules = EOU.add(rules, new Rule(4, p, q));
     }
     
