@@ -71,6 +71,10 @@ public class Boid {
         this.state = this.newstate;
         if (this.newstate != 0) {
             this.territory = this.newstate;
+        } if (this.newstate == 1 && this.x == 200) {
+            //win screen
+        } else if (this.newstate == 2 && this.x == 0) {
+            // lose code
         }
     }
     
