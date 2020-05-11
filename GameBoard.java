@@ -243,12 +243,12 @@ public class GameBoard extends javax.swing.JFrame {
                     repain();
                     
                     for (Boid boid: stuff){
-                        if (boid.x == 0 && boid.state == 2){
+                        if (boid.x == 0 && boid.state == 2 && play){
                             loseMenu lsMnu = new loseMenu(levelSel);
                             lsMnu.setVisible(true);
                             dispose(); // closes current frame
                             play = false;
-                        } else if (boid.x == width - 1 && boid.state == 1){
+                        } else if (boid.x == width - 1 && boid.state == 1 && play){
                             winMenu wnMnu = new winMenu();
                             wnMnu.setVisible(true);
                             dispose(); // closes current frame
