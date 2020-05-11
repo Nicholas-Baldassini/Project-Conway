@@ -70,9 +70,9 @@ public class HowToPlay extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/resources/Screen Shot 2020-05-11 at 10.08.13 AM.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/Screen Shot 2020-05-11 at 10.08.13 AM.png"))); // NOI18N
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/resources/Screen Shot 2020-05-11 at 10.07.48 AM.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/Screen Shot 2020-05-11 at 10.07.48 AM.png"))); // NOI18N
 
         jLabel7.setText("Cells will die under any other circumstances besides these");
 
@@ -135,7 +135,7 @@ public class HowToPlay extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)

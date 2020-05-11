@@ -57,9 +57,9 @@ public class HowToPlay2 extends javax.swing.JFrame {
 
         jLabel3.setText("Be wary of walls and enemies!");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/resources/Screen Shot 2020-05-11 at 10.26.51 AM.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/Screen Shot 2020-05-11 at 10.26.51 AM.png"))); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/resources/Screen Shot 2020-05-11 at 10.27.51 AM.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ProjectConway/Screen Shot 2020-05-11 at 10.27.51 AM.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +101,7 @@ public class HowToPlay2 extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

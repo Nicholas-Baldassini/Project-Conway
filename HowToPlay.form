@@ -90,7 +90,7 @@
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -152,14 +152,14 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ProjectConway/resources/Screen Shot 2020-05-11 at 10.08.13 AM.png"/>
+          <Image iconType="3" name="/ProjectConway/Screen Shot 2020-05-11 at 10.08.13 AM.png"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ProjectConway/resources/Screen Shot 2020-05-11 at 10.07.48 AM.png"/>
+          <Image iconType="3" name="/ProjectConway/Screen Shot 2020-05-11 at 10.07.48 AM.png"/>
         </Property>
       </Properties>
     </Component>
