@@ -253,7 +253,7 @@ public class GameBoard extends javax.swing.JFrame {
                                 play = false;
                             } else if ((x == 0) && (stuff[stuff.length - 1].territory != 1)) {
                                 //go to lose menue
-                                loseMenu lsMnu = new loseMenu();
+                                loseMenu lsMnu = new loseMenu(levelSel);
                                 lsMnu.setVisible(true);
                                 dispose(); // closes current frame
                                 play = false;
