@@ -28,10 +28,11 @@ public class winMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         pausetitle = new java.awt.Label();
-        resumebutton = new java.awt.Button();
-        quitbutton = new java.awt.Button();
+        LevelSelectButton = new java.awt.Button();
+        MenuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("menu");
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(204, 204, 204));
         setMinimumSize(new java.awt.Dimension(500, 500));
@@ -41,49 +42,44 @@ public class winMenu extends javax.swing.JFrame {
         pausetitle.setForeground(new java.awt.Color(0, 0, 0));
         pausetitle.setText("YOU WIN!");
         getContentPane().add(pausetitle);
-        pausetitle.setBounds(130, 0, 234, 200);
+        pausetitle.setBounds(130, 0, 250, 200);
 
-        resumebutton.setLabel("QUIT");
-        resumebutton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                resumebuttonMouseClicked(evt);
-            }
-        });
-        resumebutton.addActionListener(new java.awt.event.ActionListener() {
+        LevelSelectButton.setActionCommand("QUIT");
+        LevelSelectButton.setLabel("LEVEL SELECT");
+        LevelSelectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resumebuttonActionPerformed(evt);
+                LevelSelectButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(resumebutton);
-        resumebutton.setBounds(140, 250, 210, 40);
-        resumebutton.getAccessibleContext().setAccessibleName("QUIT");
+        getContentPane().add(LevelSelectButton);
+        LevelSelectButton.setBounds(140, 210, 210, 40);
 
-        quitbutton.setActionCommand("QUIT");
-        quitbutton.setLabel("LEVEL SELECT");
-        quitbutton.addActionListener(new java.awt.event.ActionListener() {
+        MenuButton.setText("MENU");
+        MenuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quitbuttonActionPerformed(evt);
+                MenuButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitbutton);
-        quitbutton.setBounds(140, 200, 210, 40);
+        getContentPane().add(MenuButton);
+        MenuButton.setBounds(140, 280, 210, 40);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resumebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumebuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resumebuttonActionPerformed
+    private void LevelSelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LevelSelectButtonActionPerformed
+        //go to level select screen
+        levelSelect lvlSel = new levelSelect();
+        lvlSel.setVisible(true);
+        dispose(); // closes current frame
+    }//GEN-LAST:event_LevelSelectButtonActionPerformed
 
-    private void quitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbuttonActionPerformed
-        // TODO add your handling code here:
-        //make it stop
-    }//GEN-LAST:event_quitbuttonActionPerformed
-
-    private void resumebuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resumebuttonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resumebuttonMouseClicked
+    private void MenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuButtonActionPerformed
+        // go back to main menu
+        mainMenu mnMnu = new mainMenu();
+        mnMnu.setVisible(true);
+        dispose(); // closes current frame
+    }//GEN-LAST:event_MenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,8 +121,8 @@ public class winMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button LevelSelectButton;
+    private javax.swing.JButton MenuButton;
     private java.awt.Label pausetitle;
-    private java.awt.Button quitbutton;
-    private java.awt.Button resumebutton;
     // End of variables declaration//GEN-END:variables
 }

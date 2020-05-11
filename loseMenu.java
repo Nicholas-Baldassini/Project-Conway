@@ -14,8 +14,10 @@ public class loseMenu extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
-    public loseMenu() {
+    static int levelSel;
+    public loseMenu(int level) {
         initComponents();
+        levelSel = level;
     }
 
     /**
@@ -28,8 +30,8 @@ public class loseMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         pausetitle = new java.awt.Label();
-        resumebutton = new java.awt.Button();
-        quitbutton = new java.awt.Button();
+        RetryButton = new java.awt.Button();
+        LevelSelectButton = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
@@ -41,48 +43,53 @@ public class loseMenu extends javax.swing.JFrame {
         pausetitle.setForeground(new java.awt.Color(0, 0, 0));
         pausetitle.setText("YOU LOSE!");
         getContentPane().add(pausetitle);
-        pausetitle.setBounds(120, 0, 260, 200);
+        pausetitle.setBounds(120, 0, 290, 200);
 
-        resumebutton.setLabel("RETRY");
-        resumebutton.addMouseListener(new java.awt.event.MouseAdapter() {
+        RetryButton.setLabel("RETRY");
+        RetryButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                resumebuttonMouseClicked(evt);
+                RetryButtonMouseClicked(evt);
             }
         });
-        resumebutton.addActionListener(new java.awt.event.ActionListener() {
+        RetryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resumebuttonActionPerformed(evt);
+                RetryButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(resumebutton);
-        resumebutton.setBounds(140, 200, 210, 40);
+        getContentPane().add(RetryButton);
+        RetryButton.setBounds(140, 200, 210, 40);
 
-        quitbutton.setActionCommand("QUIT");
-        quitbutton.setLabel("LEVEL SELECT");
-        quitbutton.addActionListener(new java.awt.event.ActionListener() {
+        LevelSelectButton.setActionCommand("LevelSelect");
+        LevelSelectButton.setLabel("LEVEL SELECT");
+        LevelSelectButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quitbuttonActionPerformed(evt);
+                LevelSelectButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(quitbutton);
-        quitbutton.setBounds(140, 250, 210, 40);
+        getContentPane().add(LevelSelectButton);
+        LevelSelectButton.setBounds(140, 250, 210, 40);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resumebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumebuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resumebuttonActionPerformed
+    private void RetryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetryButtonActionPerformed
+        //open the game board and update the level variable to the same level that they were just on
+        GameBoard sandbox = new GameBoard(levelSel);
+        sandbox.setVisible(true);
+        dispose(); // closes current frame
+    }//GEN-LAST:event_RetryButtonActionPerformed
 
-    private void quitbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitbuttonActionPerformed
-        // TODO add your handling code here:
-        //make it stop
-    }//GEN-LAST:event_quitbuttonActionPerformed
+    private void LevelSelectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LevelSelectButtonActionPerformed
+        //go to level select screen
+        levelSelect lvlSel = new levelSelect();
+        lvlSel.setVisible(true);
+        dispose(); // closes current frame
+    }//GEN-LAST:event_LevelSelectButtonActionPerformed
 
-    private void resumebuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resumebuttonMouseClicked
+    private void RetryButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetryButtonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_resumebuttonMouseClicked
+    }//GEN-LAST:event_RetryButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -119,13 +126,13 @@ public class loseMenu extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new loseMenu().setVisible(true);
+            new loseMenu(levelSel).setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Button LevelSelectButton;
+    private java.awt.Button RetryButton;
     private java.awt.Label pausetitle;
-    private java.awt.Button quitbutton;
-    private java.awt.Button resumebutton;
     // End of variables declaration//GEN-END:variables
 }
