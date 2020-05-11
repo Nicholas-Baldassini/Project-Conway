@@ -91,7 +91,7 @@ public class Boid {
     
     /* 
     Territory Update method
-    Pre: Territory to the right is claimed
+    Pre: Territory to the left is claimed
     Post: Territory is claimed
     */
     void nUpdate(Boid boid) {
